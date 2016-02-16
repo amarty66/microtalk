@@ -258,6 +258,27 @@ a:hover {color:red;}
      fill="transparent" stroke="grey"}}
 }
 
+THE GOLDEN RECTANGLE
+{def GR
+     {def GR.square {lambda {:d}
+          M:d T90 M:d T90 M:d T90 M:d T90}}
+     {def GR.fibo {lambda {:a :b :n}
+          {if {< :n 0}
+           then :b 
+           else {GR.fibo {+ :a :b} :a {- :n 1}}}}}
+     {def GR.spiral {lambda {:d :n}
+          {if {<  :n 0} 
+           then else
+            {GR.square :d} M:d T90 M:d
+             {GR.spiral {* 2 {GR.fibo 1 0 :n}} {- :n 1}}}}}
+ {lambda {:n}
+  {GR.spiral 0 :n}}} 
+
+{svg {@ width="490px" height="400px" style="background:#fff"}
+ {polyline 
+  {@ points="{turtle 480 350 90 {GR 11}}" 
+     stroke="#f00" fill="#ff0"}}}
+
 <h3>6) INTERACTING WITH USER</h3>
 {input 
  {@ id="smart_hello" 
