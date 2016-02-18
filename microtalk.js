@@ -1,6 +1,6 @@
 var MICROTALK = (function() {
 /*
-  MICROTALK by Alain Marty | updated on 2016/02/15
+  MICROTALK by Alain Marty | updated on 2016/02/18
   http://epsilonwiki.free.fr/alphawiki_2/?view=microtalk
   microtalk is made of expressions:
 
@@ -632,6 +632,7 @@ dict['style'] = function (){ // {style °° code °°}
   return '';
 };
 
+/*
 // added 2015/09/12
 dict['nanolisp'] = function () { // {nanolisp lambdalisp expression}
   var result = NANOLISP.parser( arguments[0] );
@@ -639,6 +640,7 @@ dict['nanolisp'] = function () { // {nanolisp lambdalisp expression}
                     + result.infos[2] + "ms:\n" + result.val;
   
 };
+*/
 
 // added 2015/12/05
 dict['minibox'] = function() {
@@ -670,6 +672,13 @@ dict['turtle'] = function() { // {turtle x0 y0 a0 M100 T90 ...}
     pol += Math.round(poly[i][0]) + ' '
         +  Math.round(poly[i][1]) + ' ';
   return pol
+};
+
+// added 2016/02/18
+dict['javascript'] = function() {
+  var JScode = supertrim(arguments[0]);
+  // JScode should be sanitarized here! 
+  return window.eval( unquote(JScode) )
 };
 
 // ... and so on!
