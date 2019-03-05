@@ -12,14 +12,14 @@ So syntax is straitghtforward but you must build everything by yourself ...
 
 As an example, defining these functions
 
-(def | (lambda (:a :b) :a))
-(def ø (lambda (:a :b) :b))
-(def □ (lambda (:a :b :c) (:c :a :b)))
-(def [ (lambda (:c) (:c |)))
-(def ] (lambda (:c) (:c ø)))
-(def ? (lambda (:c) (:c (| ]) [)))
-(def ¿ (lambda (:c) (:c (| [) ])))
-(def Y (lambda (:f :l) (:f :f :l)))
+    (def | (lambda (:a :b) :a))
+    (def ø (lambda (:a :b) :b))
+    (def □ (lambda (:a :b :c) (:c :a :b)))
+    (def [ (lambda (:c) (:c |)))
+    (def ] (lambda (:c) (:c ø)))
+    (def ? (lambda (:c) (:c (| ]) [)))
+    (def ¿ (lambda (:c) (:c (| [) ])))
+    (def Y (lambda (:f :l) (:f :f :l)))
 
 you can write a recursive function
 
