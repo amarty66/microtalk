@@ -23,24 +23,24 @@ As an example, defining these functions
 
 you can write a recursive function
 
-(def D
- (lambda (:l)
-  (((? :l)
-   (□ (lambda (:l))
-      (lambda (:l) ([ :l) (D (] :l))) )) :l)))
+    (def D
+     (lambda (:l)
+      (((? :l)
+       (□ (lambda (:l))
+          (lambda (:l) ([ :l) (D (] :l))) )) :l)))
       
 define a list of fruits
 
-(def FRUITS
- (□ apple
-  (□ banana
-   (□ lemon
-    (□ orange ø)))))
+    (def FRUITS
+     (□ apple
+      (□ banana
+       (□ lemon
+        (□ orange ø)))))
    
 and display it   
    
-(D (FRUITS))
--> apple banana lemon orange
+    (D (FRUITS))
+    -> apple banana lemon orange
 
 So, with such a reduced set of rules you could create data structures, pairs & lists, a control structure, recursion, and then begin to play with lists, display them. You could also reverse them, count their elements (in a very old numeral system using pipes ...). You could also build true numbers and a set of related operators, [+,*,-,/,%], compute factorials, play with Hanoï Towers and much more, theoretically ad libitum. 
 
